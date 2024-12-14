@@ -370,6 +370,15 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
+      カメラの認識
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
       仮想環境を構築
     </span>
   </a>
@@ -613,6 +622,15 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
+      カメラの認識
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
       仮想環境を構築
     </span>
   </a>
@@ -697,7 +715,15 @@ sudo apt-get upgrade
 <h2 id="_2">ファイルシステムの拡張</h2>
 <p><img alt="" src="../img/file001.jpg" /></p>
 <p><img alt="" src="../img/file002.jpg" /></p>
-<h2 id="_3">仮想環境を構築</h2>
+<h2 id="_3">カメラの認識</h2>
+<p><code>/boot/firmware/config.txt</code> の<code>camera_auto_detect=1</code> の下に<code>dtoverlay=imx219</code>を追加します。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code># Automatically load overlays for detected cameras
+camera_auto_detect=1
+<span class="hll">dtoverlay=imx219
+</span></code></pre></div></td></tr></table></div>
+<h2 id="_4">仮想環境を構築</h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>python3 -m venv env --system-site-packages
