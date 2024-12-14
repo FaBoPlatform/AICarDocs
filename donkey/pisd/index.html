@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../mac/">
+        <link rel="prev" href="../win/">
       
       
-        <link rel="next" href="../pisd/">
+        <link rel="next" href="../pi/">
       
       
       <link rel="icon" href="../../favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>PC環境(Win) - FaBo AI Car Docs</title>
+        <title>SDカード(Pi) - FaBo AI Car Docs</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#windows" class="md-skip">
+        <a href="#pi-sd" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PC環境(Win)
+              SDカード(Pi)
             
           </span>
         </div>
@@ -241,6 +241,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../win/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PC環境(Win)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -257,7 +278,7 @@
           
   
   <span class="md-ellipsis">
-    PC環境(Win)
+    SDカード(Pi)
   </span>
   
 
@@ -268,7 +289,7 @@
         
   
   <span class="md-ellipsis">
-    PC環境(Win)
+    SDカード(Pi)
   </span>
   
 
@@ -290,36 +311,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#wslubuntu-2204" class="md-nav__link">
+  <a href="#sd" class="md-nav__link">
     <span class="md-ellipsis">
-      WSLでUbuntu-22.04
+      SDカードの作成
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#miniconda" class="md-nav__link">
+  <a href="#raspberry-pi-imager" class="md-nav__link">
     <span class="md-ellipsis">
-      miniconda環境の構築
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#donkeycar" class="md-nav__link">
-    <span class="md-ellipsis">
-      DonkeyCar環境の構築
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#donkeyui" class="md-nav__link">
-    <span class="md-ellipsis">
-      DonkeyUIの起動
+      Raspberry Pi Imager
     </span>
   </a>
   
@@ -329,27 +332,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pisd/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    SDカード(Pi)
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -473,36 +455,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#wslubuntu-2204" class="md-nav__link">
+  <a href="#sd" class="md-nav__link">
     <span class="md-ellipsis">
-      WSLでUbuntu-22.04
+      SDカードの作成
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#miniconda" class="md-nav__link">
+  <a href="#raspberry-pi-imager" class="md-nav__link">
     <span class="md-ellipsis">
-      miniconda環境の構築
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#donkeycar" class="md-nav__link">
-    <span class="md-ellipsis">
-      DonkeyCar環境の構築
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#donkeyui" class="md-nav__link">
-    <span class="md-ellipsis">
-      DonkeyUIの起動
+      Raspberry Pi Imager
     </span>
   </a>
   
@@ -523,61 +487,24 @@
                   
 
 
-<h1 id="windows">Windows</h1>
-<p>DonkeyCar Version 5.1のWindows11(WSL)での構築方法です。</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Windows Powershellでも構築できますが、Powershell上でのホスト名による検索ができずに、DonkeyUIの全機能がつかえません(2024年12月現在)。</p>
-</div>
-<h2 id="wslubuntu-2204">WSLでUbuntu-22.04</h2>
-<p>WSLでUbuntuを起動</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">wsl</span> <span class="o">--</span><span class="n">install</span> <span class="n">Ubuntu</span><span class="o">-</span><span class="mf">22.04</span> 
-</code></pre></div></td></tr></table></div>
-<p>WSLで起動中のUbuntu-22.04をDonkeyCarという名前でバックアップBackup</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>mkdir C:\WSL_Backups
-wsl --export Ubuntu-22.04 C:\WSL_Backups\Ubuntu2204_backup.tar
-wsl --list --verbose
-</code></pre></div></td></tr></table></div>
-<p>DonekyCarをimport</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>wsl --import DonkeyCar F:\aicar\wsl C:\WSL_Backups\Ubuntu2204_backup.tar --version 2
-</code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>wsl --list --verbose
-  NAME                   STATE           VERSION
-  DonkeyCar              Stopped         2
-</code></pre></div></td></tr></table></div>
-<p>これで、DonkeyCar用のUbuntu 22.04が作成できたので、起動します。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>wsl -d DonkeyCar -u donkey
-</code></pre></div></td></tr></table></div>
-<h2 id="miniconda">miniconda環境の構築</h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>cd
-wget https://repo.anaconda.com/miniconda/Miniconda3-py311_24.4.0-0-Linux-x86_64.sh
-bash ./Miniconda3-py311_24.4.0-0-Linux-x86_64.sh
-source ~/.bashrc
-</code></pre></div></td></tr></table></div>
-<h2 id="donkeycar">DonkeyCar環境の構築</h2>
-<p>DonkeyCar Version 5.1.0を構築します。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>conda create -n donkey510 python=3.11
-conda activate donkey510
-</code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>git clone https://github.com/autorope/donkeycar
-cd donkeycar
-git checkout 5.1.0
-pip install -e .\[pc\]
-</code></pre></div></td></tr></table></div>
-<h2 id="donkeyui">DonkeyUIの起動</h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>export DISPLAY=:0
-</code></pre></div></td></tr></table></div>
+<h1 id="pi-sd">Pi SDカード作成</h1>
+<p>RaspberryPi4にDonkeyCar version 5.1の環境を構築します。</p>
+<h2 id="sd">SDカードの作成</h2>
+<p>Raspberry Pi Imagerを用いてSDカードを作成します。</p>
+<p><a href="https://www.raspberrypi.com/software/">https://www.raspberrypi.com/software/</a></p>
+<p><img alt="" src="../img/imager001.jpg" /></p>
+<h2 id="raspberry-pi-imager">Raspberry Pi Imager</h2>
+<p><img alt="" src="../img/pi001.jpg" /></p>
+<p><img alt="" src="../img/pi002.jpg" /></p>
+<p><img alt="" src="../img/pi003.jpg" /></p>
+<p><img alt="" src="../img/pi004.jpg" /></p>
+<p><img alt="" src="../img/pi005.jpg" /></p>
+<p><img alt="" src="../img/pi006.jpg" /></p>
+<p><img alt="" src="../img/pi007.jpg" /></p>
+<p><img alt="" src="../img/pi008.jpg" /></p>
+<p><img alt="" src="../img/pi009.jpg" /></p>
+<p><img alt="" src="../img/pi010.jpg" /></p>
+<p><img alt="" src="../img/pi011.jpg" /></p>
 
 
 
