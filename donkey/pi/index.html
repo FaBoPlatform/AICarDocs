@@ -394,6 +394,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#oled-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      OLED Display
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -667,6 +676,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#oled-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      OLED Display
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -763,6 +781,52 @@ git clone https://github.com/autorope/donkeycar
 cd donkeycar
 git checkout 5.1.0
 pip install -e .[pi]
+</code></pre></div></td></tr></table></div>
+<h2 id="oled-display">OLED Display</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>git clone https://github.com/FaBoPlatform/ip_address_display
+mkdir -p ~/fabo/bin
+cd ip_address_display
+cp oled_ip* ~/fabo/bin
+cp oled.py ~/projects/donkeycar/donkeycar/parts/
+</code></pre></div></td></tr></table></div>
+<p><code>/etc/systemd/system/ip_status.service</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code>[Unit]
+Description=ip_stats
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi
+ExecStart=/home/pi/env/bin/python /home/pi/fabo/bin/oled_ip.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo systemctl daemon-reload
+sudo systemctl enable ip_status.service
+sudo systemctl start ip_status.service
+sudo systemctl status ip_status.service
 </code></pre></div></td></tr></table></div>
 
 
