@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../../donkey/pi/">
+        <link rel="prev" href="../../donkey/ssh/">
       
       
         <link rel="next" href="../create_donkey/">
@@ -289,6 +289,27 @@
   
   <span class="md-ellipsis">
     車体環境(Pi)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../donkey/ssh/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PCと車体の接続
   </span>
   
 
@@ -617,6 +638,13 @@ Donkey setup complete.
 </code></pre></div></td></tr></table></div>
 <h2 id="configpy">config.py</h2>
 <p>~/mycar/config.py にConfigファイルが生成されます。</p>
+<p>config.pyに、DonkeyCar接続用のID, Passwordが設定されています。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># PI connection</span>
+<span class="n">PI_USERNAME</span> <span class="o">=</span> <span class="s2">&quot;pi&quot;</span>
+<span class="n">PI_HOSTNAME</span> <span class="o">=</span> <span class="s2">&quot;donkeypi.local&quot;</span>
+</code></pre></div></td></tr></table></div>
 
 
 
