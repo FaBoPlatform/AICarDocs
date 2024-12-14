@@ -425,6 +425,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      キャリブレーション
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#config" class="md-nav__link">
     <span class="md-ellipsis">
       configの設定
@@ -548,6 +557,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      キャリブレーション
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#config" class="md-nav__link">
     <span class="md-ellipsis">
       configの設定
@@ -615,8 +633,33 @@ Copying calibrate script. Adjust these before starting your car.
 Copying my car config overrides
 Donkey setup complete.
 </code></pre></div></td></tr></table></div>
+<h2 id="_3">キャリブレーション</h2>
+<p>前後</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>donkey calibrate --channel 0 --bus 1
+</code></pre></div></td></tr></table></div>
+<p>左右</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>donkey calibrate --channel 1 --bus 1
+</code></pre></div></td></tr></table></div>
 <h2 id="config">configの設定</h2>
 <p>myconfig.pyの下記パートのコメントを削除して、値を反映させます</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code># #CAMERA
+# CAMERA_TYPE = &quot;PICAM&quot;   # (PICAM|WEBCAM|CVCAM|CSIC|V4L|D435|MOCK|IMAGE_LIST)
+# IMAGE_W = 160
+# IMAGE_H = 120
+# IMAGE_DEPTH = 3         # default RGB=3, make 1 for mono
+# CAMERA_FRAMERATE = DRIVE_LOOP_HZ
+CAMERA_VFLIP = True
+# CAMERA_HFLIP = False
+# CAMERA_INDEX = 0  # used for &#39;WEBCAM&#39; and &#39;CVCAM&#39; when there is more than one camera connected
+</code></pre></div></td></tr></table></div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -636,11 +679,11 @@ Donkey setup complete.
     &quot;PWM_THROTTLE_PIN&quot;: &quot;PCA9685.1:40.0&quot;,   # PWM output pin for ESC
     &quot;PWM_THROTTLE_SCALE&quot;: 1.0,              # used to compensate for PWM frequence differences from 60hz; NOT for increasing/limiting speed
     &quot;PWM_THROTTLE_INVERTED&quot;: False,         # True if hardware requires an inverted PWM pulse
-    &quot;STEERING_LEFT_PWM&quot;: 300,               #pwm value for full left steering
-    &quot;STEERING_RIGHT_PWM&quot;: 500,              #pwm value for full right steering
-    &quot;THROTTLE_FORWARD_PWM&quot;: 300,            #pwm value for max forward throttle
-    &quot;THROTTLE_STOPPED_PWM&quot;: 410,            #pwm value for no movement
-    &quot;THROTTLE_REVERSE_PWM&quot;: 600,            #pwm value for max reverse throttle
+    &quot;STEERING_LEFT_PWM&quot;: 250,               #pwm value for full left steering
+    &quot;STEERING_RIGHT_PWM&quot;: 550,              #pwm value for full right steering
+    &quot;THROTTLE_FORWARD_PWM&quot;: 500,            #pwm value for max forward throttle
+    &quot;THROTTLE_STOPPED_PWM&quot;: 400,            #pwm value for no movement
+    &quot;THROTTLE_REVERSE_PWM&quot;: 300,            #pwm value for max reverse throttle
 }
 </code></pre></div></td></tr></table></div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -656,16 +699,16 @@ Donkey setup complete.
 <span class="normal">11</span>
 <span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code># JOYSTICK
 USE_JOYSTICK_AS_DEFAULT = True      #when starting the manage.py, when True, will not require a --js option to use the joystick
-JOYSTICK_MAX_THROTTLE = 0.5         #this scalar is multiplied with the -1 to 1 throttle value to limit the maximum throttle. This can help if you drop the controller or just don&#39;t need the full speed available.
-JOYSTICK_STEERING_SCALE = 1.0       #some people want a steering that is less sensitve. This scalar is multiplied with the steering -1 to 1. It can be negative to reverse dir.
-AUTO_RECORD_ON_THROTTLE = True      #if true, we will record whenever throttle is not zero. if false, you must manually toggle recording with some other trigger. Usually circle button on joystick.
-CONTROLLER_TYPE = &#39;F710&#39;            #(ps3|ps4|xbox|pigpio_rc|nimbus|wiiu|F710|rc3|MM1|custom) custom will run the my_joystick.py controller written by the `donkey createjs` command
-USE_NETWORKED_JS = False            #should we listen for remote joystick control over the network?
-NETWORK_JS_SERVER_IP = None         #when listening for network joystick control, which ip is serving this information
-JOYSTICK_DEADZONE = 0.01            # when non zero, this is the smallest throttle before recording triggered.
-JOYSTICK_THROTTLE_DIR = -1.0         # use -1.0 to flip forward/backward, use 1.0 to use joystick&#39;s natural forward/backward
-USE_FPV = False                     # send camera data to FPV webserver
-JOYSTICK_DEVICE_FILE = &quot;/dev/input/js0&quot; # this is the unix file use to access the joystick.
+#JOYSTICK_MAX_THROTTLE = 0.5         #this scalar is multiplied with the -1 to 1 throttle value to limit the maximum throttle. This can help if you drop the controller or just don&#39;t need the full speed available.
+#JOYSTICK_STEERING_SCALE = 1.0       #some people want a steering that is less sensitve. This scalar is multiplied with the steering -1 to 1. It can be negative to reverse dir.
+#AUTO_RECORD_ON_THROTTLE = True      #if true, we will record whenever throttle is not zero. if false, you must manually toggle recording with some other trigger. Usually circle button on joystick.
+#CONTROLLER_TYPE = &#39;F710&#39;            #(ps3|ps4|xbox|pigpio_rc|nimbus|wiiu|F710|rc3|MM1|custom) custom will run the my_joystick.py controller written by the `donkey createjs` command
+#USE_NETWORKED_JS = False            #should we listen for remote joystick control over the network?
+#NETWORK_JS_SERVER_IP = None         #when listening for network joystick control, which ip is serving this information
+#JOYSTICK_DEADZONE = 0.01            # when non zero, this is the smallest throttle before recording triggered.
+#JOYSTICK_THROTTLE_DIR = -1.0         # use -1.0 to flip forward/backward, use 1.0 to use joystick&#39;s natural forward/backward
+#USE_FPV = False                     # send camera data to FPV webserver
+#JOYSTICK_DEVICE_FILE = &quot;/dev/input/js0&quot; # this is the unix file use to access the joystick.
 </code></pre></div></td></tr></table></div>
 
 
