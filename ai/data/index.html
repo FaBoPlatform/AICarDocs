@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../donkey/ssh/">
+        <link rel="prev" href="../donkey_ui_pc/">
       
       
-        <link rel="next" href="../create_donkey/">
+        <link rel="next" href="../train/">
       
       
       <link rel="icon" href="../../favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>PCのプロジェクト作成 - FaBo AI Car Docs</title>
+        <title>データセットの収集 - FaBo AI Car Docs</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pc" class="md-skip">
+        <a href="#_1" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PCのプロジェクト作成
+              データセットの収集
             
           </span>
         </div>
@@ -367,30 +367,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    PCのプロジェクト作成
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../create_pc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -399,44 +379,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pc_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      PCのプロジェクト作成
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configpy" class="md-nav__link">
-    <span class="md-ellipsis">
-      config.py
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -488,10 +430,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../data/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    データセットの収集
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -500,6 +462,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#donkeycar" class="md-nav__link">
+    <span class="md-ellipsis">
+      DonkeyCarを起動
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -623,18 +614,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pc_1" class="md-nav__link">
+  <a href="#donkeycar" class="md-nav__link">
     <span class="md-ellipsis">
-      PCのプロジェクト作成
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configpy" class="md-nav__link">
-    <span class="md-ellipsis">
-      config.py
+      DonkeyCarを起動
     </span>
   </a>
   
@@ -655,59 +637,10 @@
                   
 
 
-<h1 id="pc">PCのプロジェクト作成</h1>
-<h2 id="pc_1">PCのプロジェクト作成</h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>donkey createcar --path ~/mycar
-</code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code>________             ______                   _________              
-___  __ \_______________  /___________  __    __  ____/_____ ________
-__  / / /  __ \_  __ \_  //_/  _ \_  / / /    _  /    _  __ `/_  ___/
-_  /_/ // /_/ /  / / /  ,&lt;  /  __/  /_/ /     / /___  / /_/ /_  /    
-/_____/ \____//_/ /_//_/|_| \___/_\__, /      \____/  \__,_/ /_/     
-                                 /____/                              
-
-using donkey v5.1.0 ...
-Creating car folder: /Users/####/mycar
-making dir  /Users/####/mycar
-Creating data &amp; model folders.
-making dir  /Users/####/mycar/models
-making dir  /Users/####/mycar/data
-making dir  /Users/####mycar/logs
-Copying car application template: complete
-Copying car config defaults. Adjust these before starting your car.
-Copying train script. Adjust these before starting your car.
-Copying calibrate script. Adjust these before starting your car.
-Copying my car config overrides
-Donkey setup complete.
-</code></pre></div></td></tr></table></div>
-<h2 id="configpy">config.py</h2>
-<p>~/mycar/config.py にConfigファイルが生成されます。</p>
-<p>config.pyに、DonkeyCar接続用のID, Passwordが設定されています。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># PI connection</span>
-<span class="n">PI_USERNAME</span> <span class="o">=</span> <span class="s2">&quot;pi&quot;</span>
-<span class="n">PI_HOSTNAME</span> <span class="o">=</span> <span class="s2">&quot;donkeypi.local&quot;</span>
-</code></pre></div></td></tr></table></div>
+<h1 id="_1">データセットの収集</h1>
+<h2 id="donkeycar">DonkeyCarを起動</h2>
+<p><img alt="" src="../img/data_001.jpg" /></p>
+<p><img alt="" src="../img/data_002.jpg" /></p>
 
 
 
