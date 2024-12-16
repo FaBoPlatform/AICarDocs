@@ -602,6 +602,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sudo-nmtui" class="md-nav__link">
+    <span class="md-ellipsis">
+      sudo nmtui
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#nmcli-dev" class="md-nav__link">
     <span class="md-ellipsis">
       nmcli dev
@@ -743,6 +752,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sudo-nmtui" class="md-nav__link">
+    <span class="md-ellipsis">
+      sudo nmtui
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#nmcli-dev" class="md-nav__link">
     <span class="md-ellipsis">
       nmcli dev
@@ -776,7 +794,7 @@
 
 
 <h1 id="pi-ogt">Pi OGT設定</h1>
-<p>Qiitaの<a href="Debian 12 (bookworm) ベースのRaspberry Pi OSでUSB-OTGする方法">https://qiita.com/JyJyJcr/items/f6a9c8f1e6599878bba0</a>記事を参考にさせてもらいました。</p>
+<p>Qiitaの<a href="https://qiita.com/JyJyJcr/items/f6a9c8f1e6599878bba0">Debian 12 (bookworm) ベースのRaspberry Pi OSでUSB-OTGする方法</a>記事を参考にさせてもらいました。</p>
 <p>USB Type-CとPCを直接つなぐことで、OGTでRaspberryPiにアクセスできるようにしておきます。</p>
 <h2 id="configtxt">config.txt</h2>
 <p><code>/boot/firmware/config.txt</code></p>
@@ -785,6 +803,9 @@
 <h2 id="cmdlinetxt">cmdline.txt</h2>
 <p><code>/boot/firmware/cmdline.txt</code></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>rootwait modules-load=dwc2,g_ether 
+</code></pre></div></td></tr></table></div>
+<h2 id="sudo-nmtui">sudo nmtui</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo nmtui
 </code></pre></div></td></tr></table></div>
 <h2 id="nmcli-dev">nmcli dev</h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo nmcli con mod USB-OTG connection.autoconnect-priority 0
