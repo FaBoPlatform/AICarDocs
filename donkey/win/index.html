@@ -317,6 +317,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mdns" class="md-nav__link">
+    <span class="md-ellipsis">
+      mDNSの構築
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#donkeyui" class="md-nav__link">
     <span class="md-ellipsis">
       DonkeyUIの起動
@@ -773,6 +782,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mdns" class="md-nav__link">
+    <span class="md-ellipsis">
+      mDNSの構築
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#donkeyui" class="md-nav__link">
     <span class="md-ellipsis">
       DonkeyUIの起動
@@ -848,8 +866,19 @@ cd donkeycar
 git checkout 5.1.0
 pip install -e .\[pc\]
 </code></pre></div></td></tr></table></div>
+<h2 id="mdns">mDNSの構築</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo apt update
+sudo apt install avahi-daemon avahi-utils
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo systemctl start avahi-daemon
+sudo systemctl enable avahi-daemon
+</code></pre></div></td></tr></table></div>
 <h2 id="donkeyui">DonkeyUIの起動</h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>export DISPLAY=:0
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>donkey ui
 </code></pre></div></td></tr></table></div>
 
 
