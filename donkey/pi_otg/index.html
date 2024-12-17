@@ -20,7 +20,7 @@
     
     
       
-        <title>車体OGT(Pi) - FaBo AI Car Docs</title>
+        <title>車体OTG(Pi) - FaBo AI Car Docs</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pi-ogt" class="md-skip">
+        <a href="#pi-otg" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              車体OGT(Pi)
+              車体OTG(Pi)
             
           </span>
         </div>
@@ -572,7 +572,7 @@
           
   
   <span class="md-ellipsis">
-    車体OGT(Pi)
+    車体OTG(Pi)
   </span>
   
 
@@ -583,7 +583,7 @@
         
   
   <span class="md-ellipsis">
-    車体OGT(Pi)
+    車体OTG(Pi)
   </span>
   
 
@@ -626,15 +626,6 @@
   <a href="#mtui" class="md-nav__link">
     <span class="md-ellipsis">
       mtui
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nmcli-dev" class="md-nav__link">
-    <span class="md-ellipsis">
-      nmcli dev
     </span>
   </a>
   
@@ -782,15 +773,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nmcli-dev" class="md-nav__link">
-    <span class="md-ellipsis">
-      nmcli dev
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#rules" class="md-nav__link">
     <span class="md-ellipsis">
       Rulesの更新
@@ -814,21 +796,30 @@
                   
 
 
-<h1 id="pi-ogt">Pi OGT設定</h1>
+<h1 id="pi-otg">Pi OTG設定</h1>
 <p>Qiitaの<a href="https://qiita.com/JyJyJcr/items/f6a9c8f1e6599878bba0">Debian 12 (bookworm) ベースのRaspberry Pi OSでUSB-OTGする方法</a>記事を参考にさせてもらいました。</p>
-<p>USB Type-CとPCを直接つなぐことで、OGTでRaspberryPiにアクセスできるようにしておきます。</p>
+<p>USB Type-CとPCを直接つなぐことで、OTGでRaspberryPiにアクセスできるようにしておきます。</p>
 <h2 id="configtxt">config.txt</h2>
 <p><code>/boot/firmware/config.txt</code></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>dtoverlay=dwc2
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>[all]
+dtoverlay=dwc2
 </code></pre></div></td></tr></table></div>
 <h2 id="cmdlinetxt">cmdline.txt</h2>
 <p><code>/boot/firmware/cmdline.txt</code></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>rootwait modules-load=dwc2,g_ether 
+<p>rootwaitとquietの間に<code>modules-load=dwc2,g_ether</code>を追加</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>rootwait modules-load=dwc2,g_ether quiet
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>reboot
 </code></pre></div></td></tr></table></div>
 <h2 id="mtui">mtui</h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo nmtui
 </code></pre></div></td></tr></table></div>
-<h2 id="nmcli-dev">nmcli dev</h2>
+<p><img alt="" src="../img/otg001.jpg" /></p>
+<p><img alt="" src="../img/otg002.jpg" /></p>
+<p><img alt="" src="../img/otg003.jpg" /></p>
+<p><img alt="" src="../img/otg004.jpg" /></p>
+<p><img alt="" src="./img/otg005.jpg" /></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo nmcli con mod USB-OTG connection.autoconnect-priority 0
 </code></pre></div></td></tr></table></div>
 <h2 id="rules">Rulesの更新</h2>
