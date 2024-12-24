@@ -909,8 +909,8 @@ Donkey setup complete.
 <span class="c1"># IMAGE_DEPTH = 3         # default RGB=3, make 1 for mono</span>
 <span class="c1"># CAMERA_FRAMERATE = DRIVE_LOOP_HZ</span>
 <span class="hll"><span class="n">CAMERA_VFLIP</span> <span class="o">=</span> <span class="kc">True</span>
-</span><span class="c1"># CAMERA_HFLIP = False</span>
-<span class="c1"># CAMERA_INDEX = 0  # used for &#39;WEBCAM&#39; and &#39;CVCAM&#39; when there is more than one camera connected</span>
+</span><span class="hll"><span class="n">CAMERA_HFLIP</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span class="c1"># CAMERA_INDEX = 0  # used for &#39;WEBCAM&#39; and &#39;CVCAM&#39; when there is more than one camera connected</span>
 </code></pre></div></td></tr></table></div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -925,18 +925,18 @@ Donkey setup complete.
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">PWM_STEERING_THROTTLE</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;PWM_STEERING_PIN&quot;</span><span class="p">:</span> <span class="s2">&quot;PCA9685.1:40.1&quot;</span><span class="p">,</span>   <span class="c1"># PWM output pin for steering servo</span>
-    <span class="s2">&quot;PWM_STEERING_SCALE&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>              <span class="c1"># used to compensate for PWM frequency differents from 60hz; NOT for adjusting steering range</span>
-    <span class="s2">&quot;PWM_STEERING_INVERTED&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>         <span class="c1"># True if hardware requires an inverted PWM pulse</span>
-    <span class="s2">&quot;PWM_THROTTLE_PIN&quot;</span><span class="p">:</span> <span class="s2">&quot;PCA9685.1:40.0&quot;</span><span class="p">,</span>   <span class="c1"># PWM output pin for ESC</span>
-    <span class="s2">&quot;PWM_THROTTLE_SCALE&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>              <span class="c1"># used to compensate for PWM frequence differences from 60hz; NOT for increasing/limiting speed</span>
-    <span class="s2">&quot;PWM_THROTTLE_INVERTED&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>         <span class="c1"># True if hardware requires an inverted PWM pulse</span>
-    <span class="s2">&quot;STEERING_LEFT_PWM&quot;</span><span class="p">:</span> <span class="mi">250</span><span class="p">,</span>               <span class="c1">#pwm value for full left steering</span>
-    <span class="s2">&quot;STEERING_RIGHT_PWM&quot;</span><span class="p">:</span> <span class="mi">550</span><span class="p">,</span>              <span class="c1">#pwm value for full right steering</span>
-    <span class="s2">&quot;THROTTLE_FORWARD_PWM&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>            <span class="c1">#pwm value for max forward throttle</span>
-    <span class="s2">&quot;THROTTLE_STOPPED_PWM&quot;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>            <span class="c1">#pwm value for no movement</span>
-    <span class="s2">&quot;THROTTLE_REVERSE_PWM&quot;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>            <span class="c1">#pwm value for max reverse throttle</span>
-<span class="p">}</span>
+     <span class="s2">&quot;PWM_STEERING_PIN&quot;</span><span class="p">:</span> <span class="s2">&quot;PCA9685.1:40.1&quot;</span><span class="p">,</span>   <span class="c1"># PWM output pin for steering servo</span>
+     <span class="s2">&quot;PWM_STEERING_SCALE&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>              <span class="c1"># used to compensate for PWM frequency differents from 60hz; NOT for adjusting steering range</span>
+     <span class="s2">&quot;PWM_STEERING_INVERTED&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>         <span class="c1"># True if hardware requires an inverted PWM pulse</span>
+     <span class="s2">&quot;PWM_THROTTLE_PIN&quot;</span><span class="p">:</span> <span class="s2">&quot;PCA9685.1:40.0&quot;</span><span class="p">,</span>   <span class="c1"># PWM output pin for ESC</span>
+     <span class="s2">&quot;PWM_THROTTLE_SCALE&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>              <span class="c1"># used to compensate for PWM frequence differences from 60hz; NOT for increasing/limiting speed</span>
+     <span class="s2">&quot;PWM_THROTTLE_INVERTED&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>         <span class="c1"># True if hardware requires an inverted PWM pulse</span>
+<span class="hll">     <span class="s2">&quot;STEERING_LEFT_PWM&quot;</span><span class="p">:</span> <span class="mi">320</span><span class="p">,</span>               <span class="c1">#pwm value for full left steering</span>
+</span><span class="hll">     <span class="s2">&quot;STEERING_RIGHT_PWM&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>              <span class="c1">#pwm value for full right steering</span>
+</span><span class="hll">     <span class="s2">&quot;THROTTLE_FORWARD_PWM&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>            <span class="c1">#pwm value for max forward throttle</span>
+</span><span class="hll">     <span class="s2">&quot;THROTTLE_STOPPED_PWM&quot;</span><span class="p">:</span> <span class="mi">440</span><span class="p">,</span>            <span class="c1">#pwm value for no movement</span>
+</span><span class="hll">     <span class="s2">&quot;THROTTLE_REVERSE_PWM&quot;</span><span class="p">:</span> <span class="mi">220</span><span class="p">,</span>            <span class="c1">#pwm value for max reverse throttle</span>
+</span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
