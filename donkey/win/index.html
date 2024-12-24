@@ -878,7 +878,7 @@
 
 
 <h1 id="windows">Windows</h1>
-<p>DonkeyCar Version 5.1のWindows11(WSL)での構築方法です。</p>
+<p>DonkeyCar Version 5.2.dev2のWindows11(WSL)での構築方法です。</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Windows Powershellでも構築できますが、Powershell上でのホスト名による検索ができずに、DonkeyUIの全機能がつかえません(2024年12月現在)。</p>
@@ -926,9 +926,13 @@ conda activate donkey510
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>git clone https://github.com/autorope/donkeycar
 cd donkeycar
-git checkout 5.1.0
+git checkout 5483490
 pip install -e .\[pc\]
 </code></pre></div></td></tr></table></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+</div>
+<p>Ver 5.1.0ではうまく動かないようなので、最新の5.2.Dev2を使用します。</p>
 <h2 id="mdns">mDNSの構築</h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo apt update

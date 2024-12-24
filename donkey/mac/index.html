@@ -842,25 +842,29 @@
 
 
 <h1 id="macapple">Mac(Appleシリコン)</h1>
-<p>DonkeyCar Version 5.1のMac(Appleシリコン,Mシリーズ)での構築方法です。</p>
+<p>DonkeyCar Version 5.2.Dev2のMac(Appleシリコン,Mシリーズ)での構築方法です。</p>
 <h2 id="miniconda">Miniconda環境の構築</h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh
 ./Miniconda3-latest-MacOSX-arm64.sh
 </code></pre></div></td></tr></table></div>
 <h2 id="donkeycar">DonkeyCar環境の構築</h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>conda create -n donkey510 python=3.11
-conda activate donkey510
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>conda create -n donkey520dev2 python=3.11
+conda activate donkey520dev2
 </code></pre></div></td></tr></table></div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>git clone https://github.com/autorope/donkeycar
 cd donkeycar
-git checkout 5.1.0
+git checkout 5483490
 pip install -e .\[macos\]
-</code></pre></div></td></tr></table></div>
+</code></pre></div></td></tr></table></div></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Version 5.1.0ではうまく動かないようなので、最新の5.2.Dev2を使用します。</p>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip install &quot;tensorflow==2.15.*&quot;
 </code></pre></div></td></tr></table></div>
 <h2 id="donkeyui">DonkeyUIの起動テスト</h2>
