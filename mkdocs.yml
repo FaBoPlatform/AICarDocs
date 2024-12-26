@@ -1,0 +1,58 @@
+site_name: FaBo AI Car Docs
+theme:
+    name: material
+    custom_dir: 'theme'
+    language: 'ja'
+    palette:
+      primary: 'green'
+      accent: 'black'
+    logo: 'logo.png'
+    favicon: 'favicon.png'
+extra:
+    search:
+        language: 'jp'
+markdown_extensions:
+  - fontawesome_markdown
+  - pymdownx.highlight:
+      use_pygments: true
+      noclasses: false
+      pygments_style: monokai
+      linenums: true
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.keys
+  - attr_list
+nav:
+  - Home: "index.md"
+  - 3.DonkeyCar環境構築:
+    - PC環境(Mac): "donkey/mac.md"
+    - PC環境(Win): "donkey/win.md"
+    - 車体SD: "donkey/complete_sd.md"
+    - WiFiへの接続: "donkey/wifi.md"
+    - PCと車体の接続: "donkey/ssh.md"
+  - 4.DonkeyCar操作:
+    - PCのプロジェクト作成: "ai/create_pc.md"
+    - 車体のプロジェク作成: "ai/create_donkey.md"
+    - PCのDonkeyUIを起動: "ai/donkey_ui_pc.md"
+    - データセットの収集: "ai/data.md"
+    - データの学習: "ai/train.md"
+  - 5.DonkeyCar設定:
+    - 車体SD(Pi): "donkey/pi_sd.md"
+    - 車体環境(Pi): "donkey/pi.md"
+    - 車体OTG(Pi): "donkey/pi_otg.md"
+  - 6.TogikaiDrive:
+    - TogikaiDrive: "togikai/github.md"
+  - 7.その他:
+    - SDカードのイメージ作成: "etc/backup.md"
+extra_css:
+#  - "https://fonts.googleapis.com/earlyaccess/notosansjp.css"
+#  - "https://fonts.googleapis.com/css?family=Open+Sans:600,800"
+  - "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
+#  - "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css"
+  - "css/version-select.css"
+  - "css/custom.css"
+extra_javascript:
+  - javascripts/version-select.js
+  - javascripts/extra.js
+plugins:
+  - macros
