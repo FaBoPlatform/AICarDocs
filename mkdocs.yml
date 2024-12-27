@@ -24,6 +24,10 @@ markdown_extensions:
   - attr_list
 nav:
   - Home: "index.md"
+  - 1.FaBo AI Car Kitの部品確認:
+    - Basic Edition: "bom/bom_fa2025b.md"
+  - 2.FaBo AI Car Kitの組み立て:
+    - Basic Edition: "assembly/assy_fa2025b.md"
   - 3.DonkeyCar環境構築:
     - PC環境(Mac): "donkey/mac.md"
     - PC環境(Win): "donkey/win.md"

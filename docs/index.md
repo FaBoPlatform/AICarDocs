@@ -1,5 +1,6 @@
 # FaBo AI Car Docs
 
+![](./img/AiCarKit0001.JPG)
 
 ## FaBo AI Car Docsについて
 
