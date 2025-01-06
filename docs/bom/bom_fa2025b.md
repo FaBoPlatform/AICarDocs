@@ -19,7 +19,7 @@
 |FA201|![back](./img/bom_fa2025b_001/back.JPG)|mount_back<br><br>※3DPrint|1個|
 |FA202|![mount_jetson](./img/bom_fa2025b_001/mount_jetson.JPG)|mount_jetson<br><br>※3DPrint|1個|
 |FA203|![mount_camera](./img/bom_fa2025b_001/mount_camera.JPG)|mount_camera<br><br>※3DPrint|1個|
-|FA301|![donkey_board](./img/bom_fa2025b_001/DNKB311.JPG)|AI Board<br><br>※FaBo 608 Rev 3.1.1|1枚|
+|FA301|![donkey_board](./img/bom_fa2025b_001/DNKB311.JPG)|AI Board（拡張ボード）<br><br>※FaBo 608 Rev 3.1.1|1枚|
 |FA302|![Raspberry Pi 4](./img/bom_fa2025b_001/raspberrypi4.JPG)|Raspberry Pi 4 Model B 4GB RAM<br><br>※FA2025-B-BBは付属しません。|1台|
 |FA401|![UGREEN 25185 ](./img/bom_fa2025b_001/UGREEN21585.JPG)|モバイルバッテリー　UGREEN 25185|1台|
 |FA402|![sdcard](./img/bom_fa2025b_001/sdcard.JPG)|マイクロSDカード128GB<br>SanDisk<br><br>※ケース付き|1枚|
@@ -37,7 +37,7 @@
 |FA601|![acsssarry001](./img/bom_fa2025b_001/ascessary001.JPG)|結束バンド・・・・2本|１セット|
 
 <div style="text-align: left;font-size: 75%">
-※5.5mmのスパナ、ドライバー、カッターナイフ、ニッパー、六角レンチ等が必要となります。お客様でご準備お願いいたします。<br>※モバイルバッテリーの充電にはUSBタイプＣのケーブルと充電器が必要でございます。お客様でご準備ください。<br>※開封後はすぐ欠品がないかご確認お願いいたします。もし欠品がございましたら、<a href="https://www.fabo.io/p/blog-page.html">こちら</a>までご連絡ください。
+※5.5mmのスパナ、プラスドライバー、カッターナイフ、ニッパー、六角レンチ、ナットドライバー(5mm)等が必要となります。またRCカー等の整備、組み立ては、RCツール8本セット(74085)があると便利です。お客様でご準備お願いいたします。<br>※モバイルバッテリーの充電にはUSBタイプＣのケーブルと充電器が必要でございます。工具は、お客様でご準備ください。<br>※開封後はすぐ欠品がないかご確認お願いいたします。もし欠品がございましたら、<a href="https://www.fabo.io/p/blog-page.html">こちら</a>までご連絡ください。
 <a href="https://www.fabo.io/p/blog-page.html">https://www.fabo.io/p/blog-page.html</a>
 </div>
 
