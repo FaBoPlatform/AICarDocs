@@ -1,6 +1,6 @@
 # FaBo AI Car Kitの組み立て
 
-![](./../../img/AiCarKit0001.JPG)
+![](./../img/AiCarKit0001.JPG)
 
 ## 【対象モデル】
 
