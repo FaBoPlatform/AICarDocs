@@ -689,6 +689,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#revision-310" class="md-nav__link">
+    Revision 3.1.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     外観
   </a>
@@ -746,6 +753,27 @@
         <li class="md-nav__item">
   <a href="#dkfa-05-bom" class="md-nav__link">
     DKFA-05　BOM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bno055-i2c" class="md-nav__link">
+    BNO055接続 I2Cからシリアルに変更
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    シリアル接続サンプルコード
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    リセット回路を使う
   </a>
   
 </li>
@@ -806,6 +834,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#revision-310" class="md-nav__link">
+    Revision 3.1.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     外観
   </a>
@@ -867,6 +902,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#bno055-i2c" class="md-nav__link">
+    BNO055接続 I2Cからシリアルに変更
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    シリアル接続サンプルコード
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    リセット回路を使う
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -885,6 +941,7 @@
 <h1 id="raspberry-piai-car-board-dkfa-05">Raspberry Pi用AI Car Board　DKFA-05</h1>
 <h3 id="dkfa-05">コード番号:DKFA-05</h3>
 <h3 id="revision-311">Revision 3.1.1</h3>
+<h3 id="revision-310">Revision 3.1.0</h3>
 <h2 id="_1">外観</h2>
 <p>表</p>
 <p><img alt="DonkeyBoard" src="../img/DKFA-05_TOP.JPG" width="300px" /></p>
@@ -1078,6 +1135,267 @@ I2Cバス拡張コネクタ付き<br>
 </tbody>
 </table>
 <p>※予告なく仕様が変更されることがございます。</p>
+<h2 id="bno055-i2c">BNO055接続 I2Cからシリアルに変更</h2>
+<p>BNO055をI2C接続からシリアル接続に変更するとより安定した値が得られます。</p>
+<p>AWG30の単線かより線の線材とAWG30があるストリッパーを用意します。</p>
+<p><img alt="" src="../img/uartMeasureCounter001.jpg" /></p>
+<p><img alt="" src="../img/uartMeasureCounter002.jpg" /></p>
+<p>半田吸い取りなどで、BNO055モジュールはJ５をオープンにしてJ3とJ4とショートにします。</p>
+<p>※I2C出力はJ4,J5をショート</p>
+<p><img alt="" src="../img/uartMeasureCounter003.jpg" /></p>
+<p>黄色い丸ところで、I2Cの線を切断します。</p>
+<p><img alt="" src="../img/BNO055_I2C.png" /></p>
+<p>カッターナイフでI2Cの通信線のみ切断します。</p>
+<p><img alt="" src="../img/uartMeasureCounter004.jpg" /></p>
+<p>物理ピン８番、物理ピン１０番を半田吸い取り線で取り除きます。</p>
+<p><img alt="" src="../img/uartMeasureCounter005.jpg" /></p>
+<p>ストリッパーで１cmほど剥きます。</p>
+<p><img alt="" src="../img/uartMeasureCounter006.jpg" /></p>
+<p>配線をピンセット等でピンを巻き込んで半田します。</p>
+<p>それぞれのスルーホールに半出します。</p>
+<p>ラズパイ側８ピン TX&lt;--&gt;BNO055モジュール 4ピン　SCL（RX）</p>
+<p>ラズパイ側１０ピン RX&lt;--&gt;BNO055モジュール　３ピン　SDA（TX）</p>
+<p><img alt="" src="../img/uartMeasureCounter007.jpg" /></p>
+<p>モジュールを装着しずれて挿入していないか確認します。</p>
+<p><img alt="" src="../img/uartMeasureCounter008.jpg" /></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo raspi-config
+</code></pre></div></td></tr></table></div>
+<p><img alt="" src="../img/raspiconfig001.png" /></p>
+<p><img alt="" src="../img/raspiconfig002.png" /></p>
+<p><img alt="" src="../img/raspiconfig003.png" /></p>
+<p><img alt="" src="../img/raspiconfig004.png" /></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo reboot
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip3 install adafruit-circuitpython-bno055
+</code></pre></div></td></tr></table></div>
+<p>使用可能なシリアルポートを調べる。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ls /dev/tty*
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ls /dev/serial*
+</code></pre></div></td></tr></table></div>
+<h2 id="_7">シリアル接続サンプルコード</h2>
+<p>オイラー角を確認するコードです。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># SPDX-License-Identifier: MIT</span>
+<span class="c1"># Copyright (c) 2017 Adafruit Industries</span>
+<span class="c1">#</span>
+<span class="c1"># This software is provided &quot;as is&quot;, without warranty of any kind.</span>
+<span class="c1"># See the MIT License for details: https://opensource.org/licenses/MIT</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">serial</span>
+<span class="kn">import</span> <span class="nn">adafruit_bno055</span>
+
+<span class="k">def</span> <span class="nf">initialize_sensor</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="s2">&quot;/dev/serial0&quot;</span><span class="p">,</span> <span class="n">baudrate</span><span class="o">=</span><span class="mi">115200</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">attempt</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">retries</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">uart</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">Serial</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">baudrate</span><span class="o">=</span><span class="n">baudrate</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">writeTimeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+            <span class="n">sensor</span> <span class="o">=</span> <span class="n">adafruit_bno055</span><span class="o">.</span><span class="n">BNO055_UART</span><span class="p">(</span><span class="n">uart</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">sensor</span>
+        <span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s2">&quot;UART write error: 7&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Initialization attempt </span><span class="si">{</span><span class="n">attempt</span><span class="si">}</span><span class="s2"> failed with BUS_OVER_RUN_ERROR. Retrying...&quot;</span><span class="p">)</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>  <span class="c1"># 少し待機して再試行</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span>
+    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Exceeded maximum retries for sensor initialization.&quot;</span><span class="p">)</span>
+
+<span class="n">sensor</span> <span class="o">=</span> <span class="n">initialize_sensor</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="s2">&quot;/dev/serial0&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sensor initialized successfully.&quot;</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">euler</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">euler</span>  <span class="c1"># (heading, roll, pitch)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Euler angles:&quot;</span><span class="p">,</span> <span class="n">euler</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;UART&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART error during sensor read:&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="_8">リセット回路を使う</h2>
+<p>BNO055のリセットを使用するのには本基板裏面のR3を0Ω抵抗を実装するか金属ピンなどで半田してショートさせます。（デフォルトR3はオープン）</p>
+<p><img alt="" src="../img/jumperR3.jpg" /></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># SPDX-License-Identifier: MIT</span>
+<span class="c1"># Copyright (c) 2017 Adafruit Industries</span>
+<span class="c1">#</span>
+<span class="c1"># This software is provided &quot;as is&quot;, without warranty of any kind.</span>
+<span class="c1"># See the MIT License for details: https://opensource.org/licenses/MIT</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">digitalio</span>
+<span class="kn">import</span> <span class="nn">serial</span>
+<span class="kn">import</span> <span class="nn">adafruit_bno055</span>
+
+<span class="c1"># ----- センサーリセット用関数（GPIO4を使用） -----</span>
+<span class="k">def</span> <span class="nf">sensor_reset</span><span class="p">():</span>
+    <span class="c1"># GPIO4 (board.D4) をリセットピンとして設定</span>
+    <span class="n">rst</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">D4</span><span class="p">)</span>
+    <span class="n">rst</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">OUTPUT</span>
+    <span class="c1"># リセットパルスを発行：Low 10ms → Highに戻し、その後2秒待機</span>
+    <span class="n">rst</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>  <span class="c1"># 10ms Low</span>
+    <span class="n">rst</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>     <span class="c1"># センサー起動待機（2秒）</span>
+    <span class="k">return</span>
+
+<span class="c1"># ----- センサー初期化用関数（UART経由、再試行付き） -----</span>
+<span class="k">def</span> <span class="nf">initialize_sensor</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="s2">&quot;/dev/serial0&quot;</span><span class="p">,</span> <span class="n">baudrate</span><span class="o">=</span><span class="mi">57600</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">attempt</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">retries</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># UARTポートを初期化</span>
+            <span class="n">uart</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">Serial</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">baudrate</span><span class="o">=</span><span class="n">baudrate</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">writeTimeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+            <span class="c1"># BNO055をUART経由で初期化</span>
+            <span class="n">sensor</span> <span class="o">=</span> <span class="n">adafruit_bno055</span><span class="o">.</span><span class="n">BNO055_UART</span><span class="p">(</span><span class="n">uart</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">sensor</span>
+        <span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s2">&quot;UART write error: 7&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;初期化試行 </span><span class="si">{</span><span class="n">attempt</span><span class="si">}</span><span class="s2"> 回目でエラー発生: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1秒待機して再試行します…&quot;</span><span class="p">)</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span>
+    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;センサー初期化の再試行回数を超えました。&quot;</span><span class="p">)</span>
+
+<span class="c1"># ----- メイン処理 -----</span>
+<span class="c1"># 1. センサーリセット（GPIO4でハードウェアリセット）</span>
+<span class="n">sensor_reset</span><span class="p">()</span>
+
+<span class="c1"># 2. UART経由でセンサーを初期化（再試行付き）</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">sensor</span> <span class="o">=</span> <span class="n">initialize_sensor</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="s2">&quot;/dev/serial0&quot;</span><span class="p">,</span> <span class="n">baudrate</span><span class="o">=</span><span class="mi">57600</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;センサー初期化に失敗しました:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+    <span class="k">raise</span>
+
+<span class="c1"># 初期化完了後、さらに1秒待機（必要に応じて調整）</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;センサー初期化完了。&quot;</span><span class="p">)</span>
+
+<span class="c1"># 3. 1秒間に100回（約10ms間隔）センサーからオイラー角を読み出すループ</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time(s), Heading, Roll, Pitch&quot;</span><span class="p">)</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">current_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
+        <span class="n">euler</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">euler</span>
+        <span class="k">if</span> <span class="n">euler</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">heading</span><span class="p">,</span> <span class="n">roll</span><span class="p">,</span> <span class="n">pitch</span> <span class="o">=</span> <span class="n">euler</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">heading</span><span class="p">,</span> <span class="n">roll</span><span class="p">,</span> <span class="n">pitch</span> <span class="o">=</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">current_time</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">heading</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">roll</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">pitch</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;読み出し中エラー:&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>  <span class="c1"># 約10ms待機 → 1秒間に約100回読み出し</span>
+</code></pre></div></td></tr></table></div>
 
 
 
