@@ -955,7 +955,13 @@
 最大8個の超音波センサー(HC-SR04)との接続をわかりやすくかつ確実なものとします。<br>
 有機ディスプレイによるRaspberry PiのIPアドレスなどの情報を表示<br>
 I2Cバス拡張コネクタ付き<br>
-フュージョンセンサーモジュール（BNO055）が簡単に拡張できます。（別売）<br></p>
+フュージョンセンサーモジュール（BNO055）<em>が簡単に拡張できます。（別売）<br>
+</em>細いピンヘッダご使用の場合は、細ピン対応のピンソケットをご使用ください（別売）<br></p>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>超音波距離センサーとの接続は適切なケーブル長さがある市販のものをお使いください。
+コネクタのピンの変形を防ぐため、力まずなるべく垂直に接続して下さい。接点不良の原因となります。</p>
+</div>
 <h2 id="raspberry-pi">使用できるRaspberry Pi</h2>
 <table>
 <thead>
@@ -1126,7 +1132,7 @@ I2Cバス拡張コネクタ付き<br>
 <td>buydisplay</td>
 </tr>
 <tr>
-<td>1</td>
+<td>2</td>
 <td>BNO055</td>
 <td>分割ロングピンソケット(細ピン用)　１列８極</td>
 <td>FH2.54-40U1GF8.5-0.5</td>
@@ -1134,7 +1140,8 @@ I2Cバス拡張コネクタ付き<br>
 </tr>
 </tbody>
 </table>
-<p>※予告なく仕様が変更されることがございます。</p>
+<p>※BNO055なしモデルは、分割ロングピンソケット(細ピン用)　１列８極を付属しません。
+※予告なく仕様が変更されることがございます。</p>
 <h2 id="bno055-i2c">BNO055接続 I2Cからシリアルに変更</h2>
 <p>BNO055をI2C接続からシリアル接続に変更するとより安定した値が得られます。</p>
 <p>AWG30の単線かより線の線材とAWG30があるストリッパーを用意します。</p>
@@ -1158,14 +1165,21 @@ I2Cバス拡張コネクタ付き<br>
 <p><img alt="" src="../img/uartMeasureCounter007.jpg" /></p>
 <p>モジュールを装着しずれて挿入していないか確認します。</p>
 <p><img alt="" src="../img/uartMeasureCounter008.jpg" /></p>
+<p>確認ができましたら、ラズパイの電源を入れます。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo raspi-config
 </code></pre></div></td></tr></table></div>
+<p>３番のInterface Optionsを選択します。</p>
 <p><img alt="" src="../img/raspiconfig001.png" /></p>
+<p>I6を選択します。</p>
 <p><img alt="" src="../img/raspiconfig002.png" /></p>
+<p>Noを選択します。</p>
 <p><img alt="" src="../img/raspiconfig003.png" /></p>
+<p>Yesを選択します。</p>
 <p><img alt="" src="../img/raspiconfig004.png" /></p>
+<p>再起動します。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo reboot
 </code></pre></div></td></tr></table></div>
+<p>BNO055の制御ライブラリをインストールします。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip3 install adafruit-circuitpython-bno055
 </code></pre></div></td></tr></table></div>
 <p>使用可能なシリアルポートを調べる。</p>
