@@ -36,6 +36,9 @@
 |FA505|![screwset005](./img/bom_fa2025b_001/screwset005.JPG)|六角オネジ・メネジ MB26-11・・・・8本<br>なべねじ　M2.6x5・・・・4本<br>M2.6ナット・・・・4個|１セット|
 |FA601|![acsssarry001](./img/bom_fa2025b_001/ascessary001.JPG)|結束バンド・・・・2本|１セット|
 
+!!! warning "注意"
+    ラズベリーパイとの意図しない電気的接触を防止するため、ご使用の際は必ず付属のスペーサー（4本）をご使用ください。
+
 <div style="text-align: left;font-size: 75%">
 ※5.5mmのスパナ、プラスドライバー、カッターナイフ、ニッパー、六角レンチ、ナットドライバー(5mm)等が必要となります。またRCカー等の整備、組み立ては、RCツール8本セット(74085)があると便利です。お客様でご準備お願いいたします。<br>※モバイルバッテリーの充電にはUSBタイプＣのケーブルと充電器が必要でございます。工具は、お客様でご準備ください。<br>※開封後はすぐ欠品がないかご確認お願いいたします。もし欠品がございましたら、<a href="https://www.fabo.io/p/blog-page.html">こちら</a>までご連絡ください。
 <a href="https://www.fabo.io/p/blog-page.html">https://www.fabo.io/p/blog-page.html</a>
